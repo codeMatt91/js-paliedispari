@@ -17,8 +17,13 @@ Creare una funzione per capire se la parola inserita è palindroma
 const write = document.getElementById('palindrom');
 const userWord = prompt('Inserisci una parola').trim();
 
-let isAllowed = false;
+
 let reverseWord;
+let result = `La parola ${userWord} `;
+
+
+
+// ! FUNZIONE CHE RITORNA UN PALINDROMO 
 
 function palindromWord(word){
    
@@ -28,12 +33,21 @@ function palindromWord(word){
       reverseWord += userWord[i];
    }
    console.log(reverseWord);
-
-   if(userWord === reverseWord){
-      isAllowed = true;
-   }
-
-   console.log(isAllowed);
+   
+   return (reverseWord);
 }
 
-console.log(palindromWord('ciccio'));
+// ! QUESTO SERVE PER STAMPARE LA FUNZIONE
+// write.innerText = palindromWord();
+
+
+if(userWord === palindromWord()){
+   result +=  `è palindroma`;
+   console.log('La parola è palindroma')
+} else {
+   result += `non è palindroma`
+   console.log('La parola non è palindroma')
+}
+
+
+write.innerText = result;
