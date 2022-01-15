@@ -1,4 +1,5 @@
-console.log('JS OK!');
+console.log('JS OK!')
+
 /* 
 
 Palidroma
@@ -14,40 +15,39 @@ Creare una funzione per capire se la parola inserita è palindroma
 
 */
 
-const write = document.getElementById('palindrom');
-const userWord = prompt('Inserisci una parola').trim();
-
-
-let reverseWord;
-let result = `La parola ${userWord} `;
+const userInput = document.getElementById('palindrom');
+const generate = document.getElementById('generate');
+let response = document.getElementById('response');
 
 
 
 // ! FUNZIONE CHE RITORNA UN PALINDROMO 
 
-function palindromWord(word){
-   
-   reverseWord = '';
+function palindromWord(word) {
 
-   for (let i = userWord.length - 1; i >= 0; i--){
-      reverseWord += userWord[i];
-   }
-   console.log(reverseWord);
-   
-   return (reverseWord);
-}
+    reverseWord = '';
 
-// ! QUESTO SERVE PER STAMPARE LA FUNZIONE
-// write.innerText = palindromWord();
+    for (let i = word.length - 1; i >= 0; i--) {
+        reverseWord += word[i];
+    }
+    console.log(reverseWord);
 
-
-if(userWord === palindromWord()){
-   result +=  `è palindroma`;
-   console.log('La parola è palindroma')
-} else {
-   result += `non è palindroma`
-   console.log('La parola non è palindroma')
+    return (reverseWord);
 }
 
 
-write.innerText = result;
+generate.addEventListener('click', function() {
+
+
+    const wordInput = userInput.value;
+    const wordReverse = palindromWord(wordInput);
+    let result = `La parola ${wordInput} `;
+
+    if (wordInput === wordReverse) {
+        result += `è palindroma`;
+        response.innerText = result;
+    } else {
+        result += `non è palindroma`;
+        response.innerText = result;
+    }
+})

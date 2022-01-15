@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="author" content="Imbimbo Matteo">
-   <link rel="stylesheet" href="style.css">
-   <title>Palindromi & Pari/dispari</title>
-</head>
-<body>
-   <div id="palindrom"></div>
 
-   <script src="js/palindromo.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Imbimbo Matteo">
+    <link rel="stylesheet" href="style.css">
+    <title>Palindromi & Pari/dispari</title>
+</head>
+
+<body>
+    <div>
+        <label for="palindrom">Inserisci una parola</label>
+        <input type="text" id="palindrom">
+        <button id="generate">Genera</button>
+        <div id="response"></div>
+    </div>
+
+    <script src="js/palindromo.js"></script>
 </body>
+
 </html>
