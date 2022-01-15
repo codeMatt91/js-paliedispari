@@ -17,6 +17,40 @@ Dichiariamo chi ha vinto.
 */
 // !RECUPERIAMO DAL DOMDOVE SCRIVERE
 
-const evenOrShots = document.getElementById('palindrom');
-const generate = document.getElementById('generate');
+const write = prompt('Inserisci pari o dispari').trim().toUpperCase()
+const userNumber = parseInt(prompt('Inserisci un numero da 1 a 5'));
 const response = document.getElementById('response');
+
+console.log(`io ho inserito: ${write}`);
+console.log(`io ho inserito: ${userNumber}`);
+
+// !VALORI RECUPERATI DAL PC 
+const pcNumber = Math.floor(Math.random() * 6) + 1;
+console.log(`il pc ha inserito: ${pcNumber}`);
+
+
+const sum = userNumber + pcNumber;
+console.log(`La somma uscita è : ${sum}`);
+
+// !FUNZIONE PER RITORNARE PARI O DISPARI 
+function returnEvenOrShots(number) {
+
+   let response;
+   if(number % 2 === 0){
+      return response = 'PARI'; 
+   } else {
+      return response = 'DISPARI'
+   }
+}
+
+if (returnEvenOrShots(sum) === 'PARI' && write === 'DISPARI'){
+   response.innerText = `Ha vinto il pc!`;
+} else if (returnEvenOrShots(sum) === 'PARI' && write === 'PARI') {
+   response.innerText = `Hai vinto tu!`;
+} else if (returnEvenOrShots(sum) === 'DISPARI' && write === 'DISPARI') {
+   response.innerText = `Hai vinto tu!`;
+} else if (returnEvenOrShots(sum) === 'DISPARI' && write === 'PARI') {
+   response.innerText = `Ha vinto il pc!`;
+} else {
+   response.innerText = `PAREGGIO!`;
+}
